@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <div class="output"></div>
+<script>
+  const people = ['Chris', 'Anne', 'Colin', 'Terri', 'Phil', 'Lola', 'Sam', 'Kay', 'Bruce'];
+  const output = document.querySelector('.output');
+  const refused = document.createElement('p');
+  output.appendChild(refused);
+  refused.style.color = 'red';
+  refused.textContent = "Refuse: ";
+  const admitted = document.createElement('p');
+  output.appendChild(admitted);
+  admitted.style.color = 'green';
+  admitted.textContent = "Admit: ";
+    for (let i = 0; i < people.length; i++) {
+      if(people[i] !== "Phil" && people[i] !== "Lola") {
+        admitted.textContent += people[i] + ", ";
+        continue;
+      } else {
+        refused.textContent += people[i] + ", ";
+      }
+    }
+    
+    let admittedPeopleString = admitted.textContent.toString();
+    let admittedPeopleFinal = admittedPeopleString.slice(0, (admittedPeopleString.length - 2));
+    admitted.textContent = admittedPeopleFinal += ".";
+   
+/* 
+let i = 0;
+while (i < people.length) {
+  if(people[i] === "Phil" || people[i] === "Lola") {
+    refused.textContent = 
+  } else {
+    admitted.textConent =
+  }
+
+i++;
+}
+*/
+
+</script>
+</html>
