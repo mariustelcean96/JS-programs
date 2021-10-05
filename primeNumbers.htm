@@ -2,32 +2,33 @@
 <html>
   <head>
     <meta charset="UTF-8">
+    <p>Check Console</p>
   </head>
 <script>
     let n = prompt ('To find all the primes to n, please enter the value of n.', 'n = ?');
-    let nrNePrime = '';
-    let nrNePrimeTrim;
-    let nrRep ='';
+    let compositesSpaces = '';
+    let composites;
+    let primes ='';
 outer:   
   for (let i = n; i >= 1; i--) {
     inner:   
       for (let j = i - 1; j > 1; j--) {
           if (i % j === 0) {
-            nrNePrime += i + " ";
+            compositesSpaces += i + " ";
             continue outer;
           } else if (i % j !== 0) {
             if (j === 2) {
-              nrRep += i + " ";
+              primes += i + " ";
             }
             continue inner;
           }
         } 
   if (i === 2) {
-    nrRep += i;
+    primes += i;
   }
   } 
-nrNePrimeTrim = nrNePrime.trim();
-console.log("These numbers are composites (not primes): " + nrNePrimeTrim + ".")
-console.log("These numbers are primes: " + nrRep + ".");
+composites = compositesSpaces.trim();
+console.log(`These numbers are composites (not primes): ${composites}.`)
+console.log(`These numbers are primes: ${primes}.`);
 </script>
 </html>
