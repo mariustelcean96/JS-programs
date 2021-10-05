@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+  </head>
+<script>
+    let n = prompt ('To find all the primes to n, please enter the value of n.', 'n = ?');
+    let nrNePrime = '';
+    let nrNePrimeTrim;
+    let nrRep ='';
+outer:   
+  for (let i = n; i >= 1; i--) {
+    inner:   
+      for (let j = i - 1; j > 1; j--) {
+          if (i % j === 0) {
+            nrNePrime += i + " ";
+            continue outer;
+          } else if (i % j !== 0) {
+            if (j === 2) {
+              nrRep += i + " ";
+            }
+            continue inner;
+          }
+        } 
+  if (i === 2) {
+    nrRep += i;
+  }
+  } 
+nrNePrimeTrim = nrNePrime.trim();
+console.log("These numbers are composites (not primes): " + nrNePrimeTrim + ".")
+console.log("These numbers are primes: " + nrRep + ".");
+</script>
+</html>
