@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <div class="container"></div>
+  </body>
+<script>
+  const output = document.querySelector('.container');
+  const para = document.createElement('p');
+  output.appendChild(para);
+  para.style.cssText = 'background-color: #E1BE6A; color: #40B0A6; font-size: 48px; padding: 5px';
+  output.style.cssText = 'width: 500px; padding: 5px';
+  let dateOfBirthOfTibi = '24.10';
+  let todaysDate = new Date();
+  let dayOfMonth = todaysDate.getDate();
+  let monthOfTheYear = todaysDate.getMonth() + 1 ; //this method counts months starting from 0
+  let dateOfTodayComposed = dayOfMonth + "." + monthOfTheYear;
+  let value = alert('Doreşti să execuţi scriptul?');
+    if (value !== 0) {
+      if (dateOfTodayComposed === dateOfBirthOfTibi) {
+        para.textContent = 'La mulţi ani, Tibi!';
+      } else {
+        para.textContent = 'Încă nu e ziua ta.';
+      }
+    } // I won't implement else for now.
+</script>
+<html>
